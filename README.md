@@ -1,1 +1,3 @@
-Modify the module of stitching to improve the performance and reduce the memory to run on mobile devices.
+Modify the module of stitching to improve the performance and reduce the memory to run on mobile devices. When generating 360 panorama images, some images will be warped to the same size with the panorama images, which are distributed into two parts. One part is in the left of these panorama images, while the other is in the right. When we want to generate a large panorama image, like 8192*4096, The stitcher will have a high memory cost. For mobile devices, the memory is limited for each APP. 
+
+Thus, I divide these images into two parts, which are handled as one image individually. It will reduce the memory and computation time, whatever it runs in PC or mobile.
